@@ -3,6 +3,7 @@
   --bg: #1a1b1e;
   --bg-secondary: #202225;
   --surface: #2c2d31;
+  --surface-lighter: #2c2d31af;
   --primary: #7289da;
   --primary-hover: #5b6eae;
   --text: #ffffff;
@@ -344,3 +345,14 @@ footer {
 .back-button:hover {
   background-color: var(--primary-hover);
 }
+
+.search-input{
+  display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      background: var(--surface-lighter);
+      padding: 0.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+  }
+
