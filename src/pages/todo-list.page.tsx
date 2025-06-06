@@ -7,7 +7,7 @@ const TodoListPage = () => {
       <Header title="My Todo List" subtitle="Add your tasks" />
       <TodosSection />
       <footer>
-        <p>Click on a task to mark it as completed</p>
+        {/*<p>Click on a task to mark it as completed</p>*/}
       </footer>
     </>
   )

@@ -6,7 +6,7 @@ type TodoSearchProps = {
 export const TodoSearch = ({ value, onChange }: TodoSearchProps) => {
   return (
     <div className="search-input">
-       <input type="text" placeholder="Search task..." value={value} onChange={e => onChange(e.target.value)}/>
+       <input type="text" placeholder="Search specific task..." value={value} onChange={e => onChange(e.target.value)}/>
     </div>
   )
 }

@@ -5,6 +5,7 @@ import { TodoSearch } from './todo-search'
 import { Spinner } from '../spinner'
 import { ErrorMessage } from '../error-message'
 import { useTodosQuery } from '../../hooks/useTodosQuery'
+import { TodoEmpty } from './todo-empty'
 
 export const TodosSection = () => {
   const { data: todos, error, isLoading, refetch } = useTodosQuery()
@@ -22,13 +23,20 @@ export const TodosSection = () => {
       <TodoForm />
       <TodoSearch value={search} onChange={setSearch} />
 
-      <div className="todo-container">
+      <div
+      className={
+        !isLoading && (!filteredTodos || filteredTodos.length === 0)
+      ? 'todo-container-empty'
+      : 'todo-container'
+  }
+>
         <ul>
           {(filteredTodos ?? []).map((todo) => (
             <TodoItem key={todo.id} todo={todo} />
           ))}
         </ul>
         {isLoading && <Spinner />}
+        {!isLoading && (!filteredTodos || filteredTodos.length === 0) && (  <TodoEmpty />  )}
       </div>
     </main>
   )

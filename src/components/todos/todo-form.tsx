@@ -1,5 +1,6 @@
 import { useState, type ChangeEvent } from 'react'
 import { useTodoCreate } from '../../hooks/useTodoCreate'
+import { Link } from 'react-router'
 
 export const TodoForm = () => {
   const [todoName, setTodoName] = useState('')
@@ -26,6 +27,9 @@ export const TodoForm = () => {
       <button onClick={handleSubmit} type="submit">
         Add
       </button>
+      <Link to={`/newTodo`} className="btn-primary">
+        Add with more details
+      </Link>
     </div>
   )
 }

@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 const TodoDetailPage = lazy(() => import('./pages/todo-detail.page'))
 const TodoListPage = lazy(() => import('./pages/todo-list.page'))
+const TodoAddPage = lazy(() => import('./pages/todo-add.page'))
 
 const queryClient = new QueryClient()
 
@@ -18,7 +19,7 @@ function App() {
             <Route
               path="/"
               element={
-                <Suspense fallback={<div>is loading</div>}>
+                <Suspense fallback={<Spinner />}>
                   <TodoListPage />
                 </Suspense>
               }
@@ -28,6 +29,14 @@ function App() {
               element={
                 <Suspense fallback={<Spinner />}>
                   <TodoDetailPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/newTodo"
+              element={
+                <Suspense fallback={<Spinner />}>
+                  <TodoAddPage />  
                 </Suspense>
               }
             />

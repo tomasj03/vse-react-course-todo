@@ -24,6 +24,8 @@ export const useTodoCreate = () => {
             name: todoName,
             id: Date.now(),
             completed: false,
+            // TODO: HIS NEEDS TO BE CHANGED TO THE CORRECT PRIORITY!!
+            priority: 1
           },
         ]
       })

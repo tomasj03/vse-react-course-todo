@@ -1,9 +1,28 @@
-import { Link } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 import { Header } from '../components/header'
 import { useTodoQuery } from '../hooks/useTodoQuery'
+import { useTodoToggle } from '../hooks/useTodoToggle'
+import { useTodoDelete } from '../hooks/useTodoDelete'
 
 const TodoDetailPage = () => {
   const { data: todo, isError } = useTodoQuery()
+  const { mutate: toggleTodo } = useTodoToggle()
+  const { mutate: deleteTodo } = useTodoDelete()
+  const navigate = useNavigate()
+
+  const handleToggle = () => {
+    toggleTodo({ id: todo.id, completed: !todo.completed })
+  }
+
+  const handleDelete = () => {
+    if (window.confirm("Do you really want to delete the task?")) {
+      deleteTodo(todo.id, {
+        onSuccess: () => {
+          navigate('/')
+        }
+      })
+    }
+  }
 
   if (isError || !todo) {
     return (
@@ -15,6 +34,7 @@ const TodoDetailPage = () => {
       </div>
     )
   }
+
   return (
     <>
       <Header title="Todo Detail" subtitle="Here is detail of todo" />
@@ -36,6 +56,13 @@ const TodoDetailPage = () => {
               <p>{todo.description}</p>
             </div>
           )}
+
+        <button onClick={handleToggle} className="button-detail">
+        {todo.completed ? "Undo" : "Mark as Completed"}
+      </button>
+      <button onClick={handleDelete} className="button-detail delete">
+        Delete
+      </button>
         </div>
 
         <Link to="/">
