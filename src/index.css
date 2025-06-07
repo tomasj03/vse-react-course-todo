@@ -330,6 +330,7 @@ footer {
   margin-top: 15px;
   padding-top: 15px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 40px;
 }
 
 .todo-detail-error {
@@ -540,4 +541,25 @@ background: var(--danger) !important;
 
 .description-add{
   height: 8rem;
+}
+
+.go-back-home-add{
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.go-back-home-add button{
+  background-color: gray;
+}
+
+.description{
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.or-separator{
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }

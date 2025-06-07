@@ -45,9 +45,12 @@ export const TodoForm = () => {
         <option value={2}>Priority 2</option>
         <option value={3}>Priority 3</option>
       </select>
-      <button onClick={handleSubmit} type="submit" className="btn-primary">
+      <button onClick={handleSubmit} type="submit" className="btn-primary description">
         Quick add
       </button>
+      <div className="or-separator">
+        <span>or</span>
+      </div>
       <Link to="/newTodo" className="btn-primary description" state={{ name: todoName }}>
         Add with description
       </Link>

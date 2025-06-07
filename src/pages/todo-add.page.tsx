@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Header } from "../components/header"
-import { useLocation, useNavigate } from "react-router"
+import { Link, useLocation, useNavigate } from "react-router"
 import { useTodoCreate } from "../hooks/useTodoCreate"
 
 const TodoAddPage = () => {
@@ -102,6 +102,12 @@ const TodoAddPage = () => {
           {isPending ? "Adding..." : "Add todo"}
         </button>
       </form>
+      <div className="go-back-home-add">
+      <Link to="/">
+          <button className="back-button">Back to Home</button>
+        </Link>
+      </div>
+
     </div>
   )
 }
