@@ -22,9 +22,11 @@ export const todoApi = {
     const response = await fetch(API_URL)
     return handleResponse<Todo[]>(response)
   },
-  async createTodo(newTodo: string) {
+  async createTodo(newTodo: { name: string; description?: string; priority?: number }) {
     const body = {
-      name: newTodo,
+      name: newTodo.name,
+      description: newTodo.description,
+      priority: newTodo.priority
     }
     const response = await fetch(API_URL, {
       method: 'POST',

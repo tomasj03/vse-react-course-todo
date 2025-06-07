@@ -31,7 +31,7 @@ body {
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 2rem 1rem;
 }
@@ -390,6 +390,70 @@ background: var(--danger) !important;
   border-radius: var(--radius);
 }
 
+.todo-priority-1 {
+  background: #d12a2a;
+  color: #ffffff ;
+  border: 1px solid #b50000;
+}
+.todo-priority-2 {
+  background: #ccaf1f;
+  color: #ffffff;
+  border: 1px solid #b68e00;
+}
+.todo-priority-3 {
+  background: #71be42;
+  color: #ffffff;
+  border: 1px solid #1e7527;
+}
+
+.form-todo-priority {
+  color: #836600;
+  font-weight: 600;
+  font-size: 0.95em;
+  background: #fbe471;
+  border-radius: 4px;
+  padding: 2px 7px;
+  margin-right: 6px;
+  flex: 0 0 10%;
+  text-align: center;
+  height: 50px;
+  align-content: center;
+  margin-right: 10px;
+  border-radius: var(--radius);
+}
+
+.form-todo-priority-1{
+  background: #ffe8e8;
+  color: #b50000;
+  border-color: #b50000;
+}
+.form-todo-priority-2{
+  background: #fffced;
+  color: #b68e00;
+  border-color: #b68e00;
+}
+.form-todo-priority-3 {
+  background: #edffe2;
+  color: #1e7527;
+  border-color: #1e7527;
+}
+
+.form-todo-priority-1.selected {
+  background: #d12a2a;
+  color: #ffffff ;
+  border: 1px solid #b50000;
+}
+.form-todo-priority-2.selected {
+  background: #ccaf1f;
+  color: #ffffff;
+  border: 1px solid #b68e00;
+}
+.form-todo-priority-3.selected {
+  background: #71be42;
+  color: #ffffff;
+  border: 1px solid #1e7527;
+}
+
 .btn-primary {
   background-color: var(--primary);
   color: var(--text);
@@ -404,4 +468,72 @@ background: var(--danger) !important;
 
 .btn-primary:hover{
   background-color: var(--primary-hover);
+}
+
+
+.priority-select {
+  padding: 0.5em 1em;
+  border: 1px solid #d1d5db;
+  border-radius: var(--radius, 4px);
+  font-size: 1rem;
+  background: #fff;
+  color: #111111;
+  margin-right: 8px;
+}
+
+.item-name{
+  flex: 0 0 20%;
+}
+
+.item-description{
+  font-style: italic;
+  color: rgb(167, 167, 167);
+}
+
+.advanced-add{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.todo-add-container div{
+  margin-bottom: 1rem;
+}
+
+.todo-add-container input{
+  width: 100%;
+}
+
+.priority-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 1.3em;
+}
+
+.priority-label {
+  margin-right: 8px;
+  font-weight: 500;
+  min-width: 70px;
+}
+
+.priority-radio-btn {
+  border: 1.5px solid #d1d5db;
+  /*background: #f9f9f9;*/
+  border-radius: 6px;
+  padding: 0.4em 1.2em;
+  font-size: 1rem;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.16s;
+}
+
+.priority-radio-btn.selected {
+  font-weight: 700;
+  border: 2px solid #1a1a1a;
+}
+
+.priority-description{
+  display: flex;
+  justify-content: center;
 }

@@ -11,10 +11,21 @@ export const TodosSection = () => {
   const { data: todos, error, isLoading, refetch } = useTodosQuery()
   const [search, setSearch] = useState('')
 
-  const filteredTodos = todos?.filter((todo) =>
-      typeof todo.name === 'string' &&
-      todo.name.toLowerCase().includes(search.toLowerCase())
+  const filteredTodos = todos
+  ?.filter((todo) =>
+    typeof todo.name === 'string' &&
+    todo.name.toLowerCase().includes(search.toLowerCase())
   )
+  ?.sort((a, b) => {
+    // sort by priorities first
+    const priorityA = typeof a.priority === 'number' ? a.priority : 99
+    const priorityB = typeof b.priority === 'number' ? b.priority : 99
+    if (priorityA !== priorityB) {
+      return priorityA - priorityB
+    }
+    // and then by name
+    return a.name.localeCompare(b.name, undefined, { sensitivity: 'base' })
+  })
 
   return (
     <main>
