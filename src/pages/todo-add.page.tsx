@@ -1,10 +1,12 @@
 import { useState } from "react"
 import { Header } from "../components/header"
-import { useNavigate } from "react-router"
+import { useLocation, useNavigate } from "react-router"
 import { useTodoCreate } from "../hooks/useTodoCreate"
 
 const TodoAddPage = () => {
-  const [name, setName] = useState("")
+  const location = useLocation();
+  const prefillName = location.state?.name || "";
+  const [name, setName] = useState(prefillName);
   const [description, setDescription] = useState("")
   const [priority, setPriority] = useState<number>(0) // default prio
   const [error, setError] = useState<string | null>(null)
@@ -55,7 +57,7 @@ const TodoAddPage = () => {
             autoFocus
           />
         </div>
-        <div className="input-group">
+        <div className="input-group description-add">
           <input
             placeholder="Description"
             className="input"

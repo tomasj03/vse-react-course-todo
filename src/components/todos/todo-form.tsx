@@ -48,7 +48,7 @@ export const TodoForm = () => {
       <button onClick={handleSubmit} type="submit" className="btn-primary">
         Quick add
       </button>
-      <Link to="/newTodo" className="btn-primary description">
+      <Link to="/newTodo" className="btn-primary description" state={{ name: todoName }}>
         Add with description
       </Link>
     </div>

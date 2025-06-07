@@ -508,7 +508,7 @@ background: var(--danger) !important;
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-bottom: 1.3em;
+  margin-bottom: 2.5em !important;
 }
 
 .priority-label {
@@ -536,4 +536,8 @@ background: var(--danger) !important;
 .priority-description{
   display: flex;
   justify-content: center;
+}
+
+.description-add{
+  height: 8rem;
 }
