@@ -7,6 +7,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 const TodoDetailPage = lazy(() => import('./pages/todo-detail.page'))
 const TodoListPage = lazy(() => import('./pages/todo-list.page'))
 const TodoAddPage = lazy(() => import('./pages/todo-add.page'))
+const TodoEditPage = lazy(() => import('./pages/todo-edit.page'))
 
 const queryClient = new QueryClient()
 
@@ -40,6 +41,7 @@ function App() {
                 </Suspense>
               }
             />
+            <Route path="/todos/:id/edit" element={<TodoEditPage />} />
             <Route path="*" element={<div>Not found</div>} />
           </Routes>
         </BrowserRouter>

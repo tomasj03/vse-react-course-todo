@@ -563,3 +563,37 @@ background: var(--danger) !important;
   justify-content: center;
   align-items: center;
 }
+
+.edit{
+  background-color: rgb(146, 146, 33);
+  margin-left: 4rem;
+}
+
+.save-edit{
+  width: 100%;
+}
+
+.edit-button{
+  background-color: rgb(172, 146, 0);
+  padding: 0 30px !important;
+  align-content: center;
+}
+
+.edit-buttons{
+  display: flex;
+  justify-content: center;
+  max-height: 40px;
+}
+
+.todo-detail-heading, .todo-detail-status, .todo-detail-description{
+   display: flex;
+   justify-content: center;
+   gap: 5px;
+}
+
+.priority-detail-page{
+  margin-right: 0px !important;
+  max-width: 2rem;
+  align-content: center;
+  text-align: center;
+}

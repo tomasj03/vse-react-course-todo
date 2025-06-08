@@ -40,7 +40,7 @@ const TodoDetailPage = () => {
       <Header title={`Detail of ${todo.name}`} subtitle={`Here is detail of ${todo.name}`} />
       <div className="todo-detail">
         <div className="todo-detail-card">
-          <h2>Name: {todo.name}</h2>
+          <h2 className="todo-detail-heading">Name: {todo.name}</h2>
           <div className="todo-detail-status">
             Status:{" "}
             <span className={todo.completed ? "completed" : "active"}>
@@ -48,7 +48,7 @@ const TodoDetailPage = () => {
             </span>
           </div>
           <div className="todo-detail-status">
-            Priority: <span className={"completed"}>{todo.priority}</span>
+            Priority: <span className={`priority-detail-page todo-priority todo-priority-${todo.priority}`}>{todo.priority}</span>
           </div>
 
           {todo.description && (
@@ -57,12 +57,16 @@ const TodoDetailPage = () => {
             </div>
           )}
 
-          <button onClick={handleToggle} className="button-detail">
+            <div className="edit-buttons">
+            <button onClick={handleToggle} className="button-detail">
             {todo.completed ? "Undo" : "Mark as Completed"}
           </button>
           <button onClick={handleDelete} className="button-detail delete">
             Delete
           </button>
+          <Link to={`/todos/${todo.id}/edit`} className="btn-primary edit-button">Edit</Link>
+            </div>
+          
         </div>
 
         <div className="go-back-home-add">

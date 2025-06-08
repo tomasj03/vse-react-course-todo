@@ -62,4 +62,14 @@ export const todoApi = {
     const response = await fetch(`${API_URL}/${id}`)
     return handleResponse<Todo>(response)
   },
+  async updateTodo(update: { id: number; name: string; description?: string; priority?: number }) {
+    const response = await fetch(`${API_URL}/${update.id}`, {
+      method: "PUT", 
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(update),
+    });
+    return handleResponse<Todo>(response)
+  }
 }
